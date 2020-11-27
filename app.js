@@ -8,7 +8,7 @@ express.use(bodyParser.json());
 
 express.post("/tweets", (req, res) => {
   const tweets = req.body.tweets;
-  res.send(tweets.map(tweet => ({...tweet, language: "asdf"})));
+  res.send(tweets.map(tweet => ({id: tweet.id, score: `Score for ${tweet.id}: positive`})));
 });
 
 express.listen(5000, () =>
